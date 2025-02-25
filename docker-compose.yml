@@ -1,0 +1,13 @@
+services:
+  angular-app:
+    container_name: angular-app
+    working_dir: /usr/src/app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "4200:4201"
+    command: sh -c "npm install && npm start"
