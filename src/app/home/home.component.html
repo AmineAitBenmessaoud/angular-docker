@@ -1,4 +1,6 @@
 <p>home works!</p>
 <app-greeting [message]="homeMessage()"/> <!-- passing the home message from the ts file to the greeting component -->
-
+<!-- <input type="text" (keyup)="keyUpHandler()"> not getting any info about the event-->
 <!-- adding an component to the home component -->
+ <app-counter/>
+ <input type="text" (keyup)="keyUpHandler($event)">

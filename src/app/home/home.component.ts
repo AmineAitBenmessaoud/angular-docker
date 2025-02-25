@@ -1,12 +1,19 @@
 import { Component, signal } from '@angular/core';
 import { GreetingComponent } from '../components/greeting/greeting.component';
+import { CounterComponent } from '../components/counter/counter.component';
 
 @Component({
   selector: 'app-home',
-  imports: [GreetingComponent], // this how you import a component
+  imports: [GreetingComponent,CounterComponent], // this how you import a component
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
     homeMessage = signal("Hello, World!");
+    // keyUpHandler(){ without event handling
+    //     console.log("Key up event triggered");
+    // }
+    keyUpHandler(event: KeyboardEvent){
+        console.log(`The user pressed the ${event.key} key`);
+    }
 }
